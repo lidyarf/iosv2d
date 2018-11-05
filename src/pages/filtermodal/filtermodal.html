@@ -1,0 +1,49 @@
+<ion-header>
+
+  <ion-navbar>
+    <!-- <button item-left ion-button (click)="closeModal()"><ion-icon name="ios-close"></ion-icon></button> -->
+
+    <ion-buttons start>
+      <button icon-only="" ion-button="" class="bar-button bar-button-md bar-button-default bar-button-default-md" (click)="closeModal()"><span class="button-inner">
+        <ion-icon ios="ios-close" md="md-close" role="img" class="icon icon-md ion-md-close" aria-label="options"></ion-icon>
+       </span><div class="button-effect" style="transform: translate3d(-20px, -14px, 0px) scale(1); height: 64px; width: 64px; opacity: 0; transition: transform 260ms ease 0s, opacity 182ms ease 78ms;"></div></button>
+    </ion-buttons>
+    <ion-title>Filter Surat</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list>
+        <ion-item>
+          <ion-label>Tanggal Awal</ion-label>
+          <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="tgl_awal"></ion-datetime>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Tanggal Akhir</ion-label>
+          <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="tgl_akhir"></ion-datetime>
+        </ion-item>
+    </ion-list>
+    <ion-label><b>Kecepatan Surat</b></ion-label>
+    <ion-list radio-group [(ngModel)]="kecsurat">
+        <ion-item>
+          <ion-label>Sangat Segera</ion-label>
+          <ion-radio value="3"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Segera</ion-label>
+          <ion-radio value="2"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Biasa</ion-label>
+          <ion-radio value="1"></ion-radio>
+        </ion-item>
+    </ion-list>
+
+    <div text-center>
+      <button ion-button color="primary" type="submit" (click)="itemSearch(tgl_awal, tgl_akhir, kecsurat)" >Cari</button>
+      <button ion-button color="primary" type="submit" (click)="itemReset()" >Reset</button>
+    </div>
+</ion-content>

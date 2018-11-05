@@ -1,0 +1,7 @@
+{
+  "name": "iosv2d",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

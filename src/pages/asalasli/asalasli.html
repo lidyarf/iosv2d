@@ -1,0 +1,15 @@
+<ion-content class="page">
+    <br><h4 text-center>INFO SURAT</h4>
+    <ion-card *ngFor = "let i of surat" class="padding-sm">
+        <ion-grid>
+        <ion-row><ion-col col-5 style="font-size: 15px"><b>Asal Surat</b></ion-col><ion-col col-7 style="font-size: 15px">{{i.TEXT_ASAL_SURAT}}</ion-col></ion-row>
+        <ion-row><ion-col col-5 style="font-size: 15px"><b>Perihal</b></ion-col><ion-col col-7 style="font-size: 15px">{{i.PERIHAL}}</ion-col></ion-row>
+        <ion-row><ion-col col-5 style="font-size: 15px"><b>Tanggal Surat</b></ion-col><ion-col col-7 style="font-size: 15px">{{i.TGL_SURAT}}</ion-col></ion-row>
+        <ion-row><ion-col col-5 style="font-size: 15px"><b>Nomor Surat</b></ion-col><ion-col col-7 style="font-size: 15px">{{i.NO_SURAT}}</ion-col></ion-row>
+        <ion-row><ion-col col-5 style="font-size: 15px"><b>Nomor/Agenda</b></ion-col><ion-col col-7 style="font-size: 15px">{{i.NO_AGENDA}}</ion-col></ion-row>
+        <ion-row><ion-col col-5 style="font-size: 15px"><b>Sifat Surat</b></ion-col><ion-col col-7 style="font-size: 15px">{{i.SIFAT_SURAT}}</ion-col></ion-row>
+        <ion-row><ion-col col-5 style="font-size: 15px"><b>Klasifikasi Surat</b></ion-col><ion-col col-7 style="font-size: 15px">{{i.KECEPATAN_SURAT}}</ion-col></ion-row>
+        <ion-row><ion-col col-5 style="font-size: 15px"><b>Deskripsi</b></ion-col><ion-col col-7 style="font-size: 15px">{{i.DESKRIPSI_SINGKAT}}</ion-col></ion-row>
+    </ion-grid>
+    </ion-card>
+</ion-content>

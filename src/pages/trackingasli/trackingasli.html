@@ -1,0 +1,33 @@
+<ion-content>
+    <div class="bar bar-header bar-dark tembusan">
+        <div class='tembusan1'>Status Terakhir : 
+          <span *ngIf="js == 1" class="temb2">Surat Asli</span>
+          <span *ngIf="js == 2" class="temb2">Surat Tembusan</span>
+          <span *ngIf="js == 3" class="temb2">Surat Disposisi</span>
+          <br> 
+            <div style="display: flex;"><div class="tes">=><span class="ion-chevron-right" style="margin-right: 7px"></span></div><div style=" line-height: 17px;" class="tes2">{{namaunker}}</div></div></div>
+      </div>
+      <!-- surat asli -->
+      <ion-grid>
+        <ion-row responsive-sm *ngFor = "let trasli of tracking">
+          <ion-col col-5 style="font-size: 13px">
+            {{trasli.CREATED_DATE}}	
+          </ion-col>
+          <ion-col col-1 style="border-left: 1px solid rgba(0,0,0,0.2);">
+            <span *ngIf="trasli.JENIS_SURAT == 1"><div class="tembf"><ion-icon name="ios-flower" class="js1"></ion-icon></div></span>
+            <span *ngIf="trasli.JENIS_SURAT == 2"><div class="tembf"><ion-icon name="ios-flower" class="js2"></ion-icon></div></span>
+            <span *ngIf="trasli.JENIS_SURAT == 3"><div class="tembf"><ion-icon name="ios-flower" class="js3"></ion-icon></div></span>
+          </ion-col>
+          <ion-col>
+            <span *ngIf="trasli.JENIS_SURAT == 1" style="color: #387ef5;font-size: 13px">Surat Asli</span>
+            <span *ngIf="trasli.JENIS_SURAT == 2" style="color: purple;font-size: 13px">Surat Tembusan</span>
+            <span *ngIf="trasli.JENIS_SURAT == 3" style="color: #ef473a;font-size: 13px">Surat Disposisi</span>
+           <br><i style="font-size: 13px">{{trasli.NAMA_UNIT_KERJA}}</i></ion-col>
+        </ion-row>
+      </ion-grid>
+      
+      <div class="item no-border">
+        <br><br><br><br>
+      </div>
+
+</ion-content>

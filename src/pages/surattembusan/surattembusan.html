@@ -1,0 +1,88 @@
+<ion-header>
+
+  <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>Surat Tembusan</ion-title>
+
+    <ion-buttons end="" class="bar-buttons bar-buttons-md {{mata}}">
+        <button icon-only="" ion-button="" class="bar-button bar-button-md bar-button-default bar-button-default-md" (click)="plh(tes1)"><span class="button-inner">
+          <ion-icon [name]="zipped ? 'ios-eye-off' : 'ios-eye'" aria-label="options"></ion-icon>
+          <!-- <span [hidden]="!toggle" ngHide="toggle"><ion-icon ios="ios-eye" md="md-eye" role="img" class="icon icon-md ion-md-eye" aria-label="options"></ion-icon></span> -->
+        </span><div class="button-effect" style="transform: translate3d(-20px, -14px, 0px) scale(1); height: 64px; width: 64px; opacity: 0; transition: transform 260ms ease 0s, opacity 182ms ease 78ms;"></div></button>
+      </ion-buttons>
+      
+    <ion-buttons end="" class="bar-buttons bar-buttons-md">
+      <button icon-only="" ion-button="" class="bar-button bar-button-md bar-button-default bar-button-default-md" (click)="Logout()"><span class="button-inner">
+        <ion-icon ios="ios-log-in" md="md-log-in" role="img" class="icon icon-md ion-md-log-in" aria-label="options"></ion-icon>
+      </span><div class="button-effect" style="transform: translate3d(-20px, -14px, 0px) scale(1); height: 64px; width: 64px; opacity: 0; transition: transform 260ms ease 0s, opacity 182ms ease 78ms;"></div></button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-refresher (ionRefresh)="doRefresh($event,tes1)">
+        <ion-refresher-content
+          pullingIcon="arrow-dropdown"
+          pullingText="Pull to refresh"
+          refreshingSpinner="circles"
+          refreshingText="Refreshing...">
+        </ion-refresher-content>
+      </ion-refresher>
+
+      <button full color="primary" icon-only="" ion-button="" class="bar-button bar-button-md button-block" (click)="filter(tes1)">
+          Filter <ion-icon ios="ios-add" md="md-add" role="img" class="icon icon-md ion-md-add" aria-label="options" item-right style="text-align: right;"></ion-icon>
+          <div class="button-effect" style="transform: translate3d(-20px, -14px, 0px) scale(1); height: 64px; width: 64px; opacity: 0; transition: transform 260ms ease 0s, opacity 182ms ease 78ms;"></div>
+      </button>
+      
+      <ion-label *ngIf="datatglawal != '' || datatglakhir != '' || datakec != ''">Filter by:
+          <span *ngIf="datatglawal != ''"><i>{{datatglawal}} s/d {{datatglakhir}}</i></span>
+      </ion-label>
+      
+      <ion-label *ngIf="datakec != ''">Kecepatan surat :
+        <i *ngIf="datakec == 1">Biasa</i>
+        <i *ngIf="datakec == 2">Segera</i>
+        <i *ngIf="datakec == 3">Sangat Segera</i>
+      </ion-label>
+
+    <ion-list>
+        <ion-card *ngFor="let tes of isi" (click)="itemTapped($event, tes.id)">
+            <ion-grid>
+              <ion-row>
+                <ion-col col-10 style="font-size:14px"><b>{{tes.perihal}}</b></ion-col>
+                  <ion-col>
+                      <ion-badge item-right>{{tes.tls}}</ion-badge>
+                    <br>
+                    <ion-icon ios="ios-cloud-download-outline" md="md-cloud-download" role="img" class="icon icon-md ion-md-cloud-download-outline" style="font-size: 3.2em !important;" (click)="df(tes.id)"></ion-icon>
+                  </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col col-8 style="font-size:13px">Unit Asal Surat :</ion-col>
+                <ion-col col-3 italic style="font-size:13px" >{{tes.tglsurat}}</ion-col>
+              </ion-row>
+              <ion-row>{{tes.asalsurat}}</ion-row>
+            </ion-grid>
+        </ion-card>
+      </ion-list>  
+    </ion-content>
+    <ion-footer>
+        <ion-toolbar>
+            <ion-buttons left>
+            <button (click)="backpage(pagecount,tes1)" class="{{teks2}} button-clear" text-left left><span style="font-size:12pt">
+                <ion-icon name="arrow-back" role="img" class="icon icon-ios ion-ios-arrow-back" aria-label="arrow back"></ion-icon>
+                Sebelumnya
+              </span><div class="button-effect"></div></button>
+            </ion-buttons>
+            <ion-label style="color:white">Page {{pagenumber+1}} / {{pagecount}}</ion-label>
+              <ion-buttons end *ngIf="pagecount != 0">
+              <button (click)="nextpage(pagecount,tes1)" class="{{teks}} button-clear2" text-right><span style="font-size:12pt">
+                  Selanjutnya
+                  <ion-icon name="arrow-forward" role="img" class="icon icon-ios ion-ios-arrow-forward" aria-label="arrow forward"></ion-icon>
+                </span><div class="button-effect"></div></button>
+              </ion-buttons>
+        </ion-toolbar>
+    </ion-footer>
+    

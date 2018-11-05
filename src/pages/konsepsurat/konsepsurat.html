@@ -1,0 +1,64 @@
+<ion-header>
+
+  <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>Konsep Surat</ion-title>
+    <ion-buttons end="" class="bar-buttons bar-buttons-md">
+      <button icon-only="" ion-button="" class="bar-button bar-button-md bar-button-default bar-button-default-md" (click)="Logout()"><span class="button-inner">
+        <ion-icon ios="ios-log-in" md="md-log-in" role="img" class="icon icon-md ion-md-log-in" aria-label="options"></ion-icon>
+      </span><div class="button-effect" style="transform: translate3d(-20px, -14px, 0px) scale(1); height: 64px; width: 64px; opacity: 0; transition: transform 260ms ease 0s, opacity 182ms ease 78ms;"></div></button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-refresher (ionRefresh)="doRefresh($event,tes1)">
+        <ion-refresher-content
+          pullingIcon="arrow-dropdown"
+          pullingText="Pull to refresh"
+          refreshingSpinner="circles"
+          refreshingText="Refreshing...">
+        </ion-refresher-content>
+      </ion-refresher>
+      
+    <ion-card *ngFor="let tes of isi" (click)="itemTapped($event, tes)">
+          <ion-grid>
+              <ion-row>
+                <ion-col col-10 style="font-size:14px"><b>{{tes.klasifikasi}}</b></ion-col>
+                  <ion-col>
+                      <ion-icon ios="ios-cloud-download-outline" md="md-cloud-download" role="img" class="icon icon-md ion-md-cloud-download-outline" style="font-size: 3.2em !important;" (click)="df(tes.id)"></ion-icon>
+                  </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col col-8 style="font-size:13px">Perihal Surat :<br>{{tes.perihal}}</ion-col>
+                <ion-col col-3 style="font-size:13px">{{tes.tglsurat}}</ion-col>
+                <ion-col col-1 class="{{tes.ver}}"><ion-icon  name="checkmark-circle" style="font-size: 1.2em !important;" ></ion-icon></ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="font-size:13px">Tujuan Surat :<br>{{tes.tujuan}}</ion-col>
+              </ion-row>
+          </ion-grid>
+      </ion-card>  
+    </ion-content>
+    <ion-footer>
+        <ion-toolbar>
+            <ion-buttons left>
+            <button (click)="backpage(pagecount)" class="{{teks2}} button-clear" text-left left><span style="font-size:12pt">
+                <ion-icon name="arrow-back" role="img" class="icon icon-ios ion-ios-arrow-back" aria-label="arrow back"></ion-icon>
+                Sebelumnya
+              </span><div class="button-effect"></div></button>
+            </ion-buttons>
+            <ion-label style="color:white">Page {{pagenumber+1}} / {{pagecount}}</ion-label>
+              <ion-buttons end *ngIf="pagecount != 0">
+              <button (click)="nextpage(pagecount)" class="{{teks}} button-clear2" text-right><span style="font-size:12pt">
+                  Selanjutnya
+                  <ion-icon name="arrow-forward" role="img" class="icon icon-ios ion-ios-arrow-forward" aria-label="arrow forward"></ion-icon>
+                </span><div class="button-effect"></div></button>
+              </ion-buttons>
+        </ion-toolbar>
+    </ion-footer>

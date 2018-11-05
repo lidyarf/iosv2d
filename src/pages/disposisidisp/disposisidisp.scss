@@ -1,0 +1,28 @@
+.item h1 { font-size:18px;}
+.item p{margin-bottom: 12px;}
+h1, .h1 { font-size:36px}
+h2, .h2 { font-size:30px}
+h3, .h3 { font-size:24px}
+h4, .h4 { font-size:18px}
+h5, .h5 { font-size:14px}
+h6, .h6 { font-size:12px}
+h1 small, .h1 small { font-size:24px}
+h2 small, .h2 small { font-size:18px}
+h3 small, .h3 small,
+h4 small, .h4 small { font-size:14px}
+.item h1 { font-size:18px;}
+.card-ios h4,.card-md h4 {
+    background-color: #f8f8f8;
+    cursor: not-allowed;
+    border-radius: 7px;
+    height: 20px;
+    vertical-align: middle;
+}
+.displine{
+    border-bottom:1px solid #f8f8f8;
+}
+.cb-surat-label {width: 92%; padding: 0px 0px 3px 12px;}
+.cb-surat {width: 8%; padding: 0px 0px 3px 0px;}
+.row-surat{display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-moz-flex;display:-ms-flexbox;display:flex;padding:0px !important;width:100%;}
+.textarea{border: 1px solid #f8f8f8}
+.scroll-content{overflow-y: auto;}

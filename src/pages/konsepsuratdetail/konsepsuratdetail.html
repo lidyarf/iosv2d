@@ -1,0 +1,19 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Konsep Surat</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-tabs *ngIf="ver == 'Belum'" tabsPlacement="top" color='primary'>
+    <ion-tab [root]="tab1" tabTitle="Info Surat" [rootParams]="idkonsep"></ion-tab>
+    <ion-tab [root]="tab2" tabTitle="Isi & Catatan Surat" [rootParams]="idkonsep"></ion-tab>
+  </ion-tabs>
+
+  <ion-tabs *ngIf="ver == 'Sudah'" tabsPlacement="top" color='primary'>
+    <ion-tab [root]="tab1" tabTitle="Info Surat" [rootParams]="idkonsep" ></ion-tab>
+  </ion-tabs>
+</ion-content>

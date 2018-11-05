@@ -1,0 +1,63 @@
+page-pengagendaan {
+    .row .col{
+        font-size: 10px;
+        color: black;
+        word-wrap: break-word;
+        word-break: break-all;
+        page-break-after: always;
+    }
+    
+    .sdhdispo{color: red;}
+    .blmdispo{color: blue;}
+    
+    .textkec2{color: #f44336;}
+    .textkec3{color: white;}
+    
+    .bgkec2{color: #f44336;}
+    .bgkec3{color: white;}
+    
+    .pagging{max-width:50%;text-align:left;position:fixed;left:8px;bottom:4px;color:white;}
+    
+    .toolbar-ios{
+        min-height: 35px;
+    }
+    
+    ion-app.ios [padding] .scroll-content {
+        padding: 0px !important;
+    }
+    
+    ion-app.md [padding] .scroll-content {
+        padding: 0px !important;
+    }
+    
+    .red {
+        color: red;
+    }
+    .blue {
+        color: blue;
+    }
+    
+    //================
+    .red1 {
+        background: red !important;
+    }
+    .white1 {
+        background: white !important;
+    }
+    
+    //================================
+    .merah {
+        color: red;
+    }
+    .kuning {
+        color: rgb(196, 127, 0);
+    }
+    
+    .bground{
+        background-color: #f44336;
+        color: white;
+    }
+
+    
+    .hilang { display: none; }
+}

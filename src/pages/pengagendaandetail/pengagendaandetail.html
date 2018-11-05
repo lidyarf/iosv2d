@@ -1,0 +1,16 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Pengagendaan</ion-title>
+    
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-tabs tabsPlacement="top" color='primary'>
+        <ion-tab [root]="tab1" tabTitle="Asal Surat" [rootParams]="idagenda"></ion-tab>
+        <ion-tab [root]="tab2" tabTitle="Verifikasi Surat" [rootParams]="idagenda"></ion-tab>
+      </ion-tabs>
+</ion-content>

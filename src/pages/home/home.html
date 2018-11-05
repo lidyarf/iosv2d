@@ -1,0 +1,105 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Dashboard</ion-title>
+
+    <ion-buttons end="" class="bar-buttons bar-buttons-md">
+      <button icon-only="" ion-button="" class="bar-button bar-button-md bar-button-default bar-button-default-md" (click)="goToLogout()"><span class="button-inner">
+        <ion-icon ios="ios-log-in" md="md-log-in" role="img" class="icon icon-md ion-md-log-in" aria-label="options"></ion-icon>
+      </span><div class="button-effect" style="transform: translate3d(-20px, -14px, 0px) scale(1); height: 64px; width: 64px; opacity: 0; transition: transform 260ms ease 0s, opacity 182ms ease 78ms;"></div></button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <!-- <ion-tabs tabsPlacement="top" color='primary'>
+    <ion-tab (ionSelect)="grafik1()" tabTitle="Home"></ion-tab>
+    <ion-tab (ionSelect)="grafik2()" tabTitle="About"></ion-tab>
+    <ion-tab (ionSelect)="grafik3()" tabTitle="Contact"></ion-tab>
+  </ion-tabs> -->
+  
+  <ion-buttons end>
+    <button ion-button icon-only color="royal" (click)="button1()" class="bunder {{aktif1}}">
+      <ion-label>JAN-<br>MAR</ion-label>
+    </button>
+    <button ion-button icon-only color="royal" (click)="button2()" class="bunder {{aktif2}}">
+      <ion-label>APR-<br>JUN</ion-label>
+    </button>
+    <button ion-button icon-only color="royal" (click)="button3()" class="bunder {{aktif3}}">
+      <ion-label>JUL-<br>SEPT</ion-label>
+    </button>
+    <button ion-button icon-only color="royal" (click)="button4()" class="bunder {{aktif4}}">
+      <ion-label>OKT-<br>DES</ion-label>
+    </button>
+  </ion-buttons>
+
+  <ion-slides (ionSlideDidChange)="slideChanged()">
+      <ion-slide>
+         <!-- <ion-label> Grafik Persuratan Bulan Januari - Maret </ion-label> -->
+        <ion-card class="text1">
+        <canvas baseChart
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [options]="barChartOptions"
+              [legend]="barChartLegend"
+              [chartType]="barChartType"
+              (chartHover)="chartHovered($event)"
+              (chartClick)="chartClicked($event)"
+              height="375%"></canvas>
+            </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <canvas baseChart
+          [datasets]="barChartData"
+          [labels]="barChartLabels"
+          [options]="barChartOptions"
+          [legend]="barChartLegend"
+          [chartType]="barChartType"
+          (chartHover)="chartHovered($event)"
+          (chartClick)="chartClicked($event)"
+          height="375%"></canvas>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <canvas baseChart
+          [datasets]="barChartData"
+          [labels]="barChartLabels"
+          [options]="barChartOptions"
+          [legend]="barChartLegend"
+          [chartType]="barChartType"
+          (chartHover)="chartHovered($event)"
+          (chartClick)="chartClicked($event)"
+          height="375%"></canvas>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <canvas baseChart
+          [datasets]="barChartData"
+          [labels]="barChartLabels"
+          [options]="barChartOptions"
+          [legend]="barChartLegend"
+          [chartType]="barChartType"
+          (chartHover)="chartHovered($event)"
+          (chartClick)="chartClicked($event)"
+          height="375%"></canvas>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+
+
+
+      <!-- <canvas baseChart
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [options]="barChartOptions"
+              [legend]="barChartLegend"
+              [chartType]="barChartType"
+              (chartHover)="chartHovered($event)"
+              (chartClick)="chartClicked($event)"
+              height="375%"></canvas> -->
+</ion-content>

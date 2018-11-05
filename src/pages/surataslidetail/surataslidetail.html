@@ -1,0 +1,17 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Surat Asli</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-tabs tabsPlacement="top" color='primary'>
+        <ion-tab [root]="tab1" tabTitle="Disposisi" [rootParams]="idsurat"></ion-tab>
+        <ion-tab [root]="tab2" tabTitle="Asal Surat" [rootParams]="idsurat"></ion-tab>
+        <ion-tab [root]="tab3" tabTitle="Tracking Surat" [rootParams]="idsurat"></ion-tab>
+        <ion-tab [root]="tab4" tabTitle="Status Surat" [rootParams]="idsurat"></ion-tab>
+      </ion-tabs>
+</ion-content>

@@ -1,0 +1,21 @@
+page-pengagendaanasal {
+    .info-surat-label {width: 40%; padding: 0px; margin-left: 3px; margin-right: 8px; margin-bottom: 1px}
+    .padding-sm{padding: 8px;}
+    .page{background-color: #e0e0e0}
+    .info-surat-label {width: 40%; padding: 0px; margin-left: 3px; margin-right: 8px; margin-bottom: 1px}
+    .info-surat-content {width: 60%; padding: 0px; margin-right: 3px; margin-bottom: 1px}
+    .row{display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -moz-flex;
+        display: -ms-flexbox;
+        display: flex;
+        padding: 0px;
+        width: 100%;}
+    .padding-sm{padding: 8px;}
+    .roww{width: 100px}
+    [col-5] {
+        padding: 0px;
+        font-size: 20px
+    }
+}

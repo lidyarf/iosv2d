@@ -1,0 +1,46 @@
+<ion-content class="background">
+	<h2 class="login-title">Persuratan</h2>
+	<img src="../assets/imgs/logo.png" alt="" width="110" height="110" style="margin-top:3%">
+	<!-- <ion-img width="110" height="110" src="../assets/imgs/logo.png"></ion-img> -->
+	<form [formGroup]="authForm" (ngSubmit)="onSubmit(authForm.value)">
+		<ion-card>
+			<ion-card-header>
+				LOGIN
+			</ion-card-header>
+			<ion-card-content>					
+				<ion-list no-lines>				
+					<ion-item>
+						<ion-label floating>Username</ion-label>
+						<ion-input formControlName="username" type="text"></ion-input>
+					</ion-item>
+						
+					<ion-item *ngIf="authForm.controls.username.hasError('required') && authForm.controls.username.touched">
+						<p>Username harus diisi</p>
+					</ion-item>
+					<ion-item *ngIf="authForm.controls.username.hasError('pattern') && authForm.controls.username.touched">
+						<p>Hanya huruf besar dan kecil yang diperbolehkan</p>
+					</ion-item>        
+					<ion-item *ngIf="authForm.controls.username.hasError('minlength') && authForm.controls.username.touched">
+						<p>Minimum username 6 karakter</p>
+					</ion-item>
+					<ion-item *ngIf="authForm.controls.username.hasError('maxlength') && authForm.controls.username.touched">
+						<p>Maximum username 30 karakter</p>
+					</ion-item>
+					
+					<ion-item style="border-bottom:unset;">
+						<ion-label floating>Password</ion-label>
+						<ion-input formControlName="password" type="password"></ion-input>
+					</ion-item>
+					
+					<ion-item *ngIf="authForm.controls.password.hasError('required') && authForm.controls.password.touched">
+						<p>Password harus diisi</p>
+					</ion-item>
+					<ion-item *ngIf="authForm.controls.password.hasError('minlength') && authForm.controls.password.touched">
+						<p>Minimum password 6 karakter</p>
+					</ion-item>  							
+				</ion-list>
+			</ion-card-content>			
+			<button ion-button full [disabled]="!authForm.valid" type="submit">M A S U K</button>
+		</ion-card>
+	</form>
+</ion-content>

@@ -1,0 +1,12 @@
+<ion-content padding>
+    <ion-card>
+        <ion-item><h3 text-center style="padding-top:5px !important"><b>VERIFIKASI SURAT MASUK</b></h3></ion-item>
+            <ion-label class="tes4"><h3 text-center><b>Tujuan Surat</b></h3></ion-label>
+            <resource-tree-view [TreeData]="surat" [hasCheckbox]="true"></resource-tree-view>
+        
+            <ion-label class="tes4"><h3 text-center><b>Tembusan Surat</b></h3></ion-label>
+            <resource-tree-view [TreeData]="tembusan" [hasCheckbox]="true"></resource-tree-view>
+        
+            <button ion-button full (click)="savesurat()">VERIFIKASI</button>
+    </ion-card>
+</ion-content>

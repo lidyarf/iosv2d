@@ -1,0 +1,119 @@
+
+.tool{
+    border-bottom:white solid 2px; 
+    height: 200px;
+    padding-top: -80px;
+}
+
+// .ios ion-menu > .menu-inner > ion-header > .toolbar.statusbar-padding:first-child {
+//     padding-top: calc(20px + 4px);
+//     padding-top: calc(constant(safe-area-inset-top) + 4px);
+//     padding-top: calc(env(safe-area-inset-top) + 4px);
+//     min-height: calc(44px + 20px);
+//     min-height: calc(44px + constant(safe-area-inset-top));
+//     min-height: calc(44px + env(safe-area-inset-top));
+//   }
+
+// .toolbar-content toolbar-content-md{
+//     margin-top: -117px;
+// }
+// .toolbar-content-md{
+//     margin-top:-117px;
+// }
+
+.toolimg{
+    width:85px;
+    height:auto;
+    // border-radius: 25px;
+    // margin-top:20px;
+    padding-top: -152px;
+}
+
+
+
+.toolimg.md{
+    width:85px;
+    height:auto;
+    margin-top:-20px;
+    border-radius: 25px;
+}
+.toolimg.ios{
+    width:85px;
+    height:auto;
+    margin-top:20px;
+    border-radius: 25px;
+}
+ion-header {
+    .toolbar-background {
+        background:#3f51b5;
+    }
+    .toolbar-title {
+        color:white;
+        text-align: center;
+    }
+
+    .toolbar-title-md {
+
+        padding: 0 20px ;
+        font-size: 2rem;
+        font-weight: 500;
+        color: white;
+    
+    }
+    // .toolbar-ios {
+    //     margin-top:50px;
+    // }
+  
+    
+    .bar-button {
+        color: white;
+    }
+}
+
+
+
+
+
+ion-footer {
+    .toolbar {
+        text-align: center;
+    }
+    .toolbar-background {
+        background:#3f51b5;
+    }
+}
+
+.scroll-content {
+    overflow: auto;
+}
+
+.list-md {
+    .item-block{
+        .item-inner {
+            border-bottom: unset;
+        }
+    }
+}
+
+.list-ios {
+    .item-block{
+        .item-ios {
+            border-bottom: 0px solid #3f51b5;
+        }
+    }
+}
+
+.jumlah{
+    display: inline-block;
+    min-width: 10px;
+    padding: 3px 7px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    background-color: #f39c12;
+    border-radius: 10px;
+}

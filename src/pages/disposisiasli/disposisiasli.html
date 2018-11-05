@@ -1,0 +1,35 @@
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <h3><b>Sifat Surat</b></h3>
+      <h4><span *ngIf="sifat == 1">Biasa</span>
+      <span *ngIf="sifat == 2">Rahasia</span>
+      <span *ngIf="sifat == 3">Sangat Rahasia</span></h4>
+  </ion-card-header>
+  <ion-card-header class="displine">
+    <h3><b>Kecepatan Surat</b></h3>
+    <h4><span *ngIf="kec == 1">Biasa</span>
+    <span *ngIf="kec == 2">Segera</span>
+    <span *ngIf="kec == 3">Sangat Segera</span></h4>
+  </ion-card-header>
+
+    <h3 text-center><b>DITERUSKAN KEPADA</b></h3>
+    <br>
+    <div *ngFor="let tr of tujuan" class="row-surat">
+      <ion-checkbox  [(ngModel)]="tr.unitkerjadisosisi" class="cb-surat"></ion-checkbox>
+      <span *ngFor = "let tr2 of tr.nama_unit_kerja" class="cb-surat-label">{{tr2.jabatan_unor}}</span>
+    </div><br>
+
+    <h3 text-center><b>LAJUR DISPOSISI</b></h3><br>
+    <div *ngFor = "let lj of lajur" class="row-surat">
+      <ion-checkbox [(ngModel)]="lj.status" class="cb-surat"></ion-checkbox>
+      <span class="cb-surat-label">{{lj.lajur_disposisi}}</span>
+    </div>
+    <br>
+
+    <h3 text-center><b>ISI DISPOSISI</b></h3>
+    <ion-textarea [(ngModel)]="catatan" placeholder="Masukkan Keterangan/Catatan" class="textarea"></ion-textarea>
+
+    <button ion-button full color="primary" type="submit" (click)="itemTapped(catatan)">DISPOSISI</button>
+  </ion-card>
+</ion-content>
